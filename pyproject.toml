@@ -2,68 +2,6 @@
 requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
-[project]
-name = "faviconx"
-version = "1.0.0"
-description = "A command-line tool for generating favicons from source images"
-readme = "README.md"
-license = {text = "MIT"}
-authors = [
-    {name = "FaviconX Team", email = "contact@faviconx.dev"}
-]
-maintainers = [
-    {name = "FaviconX Team", email = "contact@faviconx.dev"}
-]
-keywords = ["favicon", "icon", "generator", "cli", "web", "pwa", "apple-touch-icon", "android"]
-classifiers = [
-    "Development Status :: 5 - Production/Stable",
-    "Intended Audience :: Developers",
-    "Topic :: Multimedia :: Graphics :: Graphics Conversion",
-    "Topic :: Software Development :: Libraries :: Python Modules",
-    "Topic :: Internet :: WWW/HTTP :: Site Management",
-    "License :: OSI Approved :: MIT License",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
-    "Programming Language :: Python :: 3.12",
-    "Programming Language :: Python :: 3.13",
-    "Operating System :: OS Independent",
-    "Environment :: Console",
-    "Topic :: Utilities",
-]
-requires-python = ">=3.9"
-dependencies = [
-    "Pillow>=10.0.0",
-    "click>=8.0.0",
-    "cairosvg>=2.7.0",
-]
-
-[project.scripts]
-faviconx = "faviconx.__main__:main"
-
-[project.urls]
-Homepage = "https://github.com/rapidrabbitsoft/faviconx"
-Repository = "https://github.com/rapidrabbitsoft/faviconx"
-Documentation = "https://github.com/rapidrabbitsoft/faviconx#readme"
-Issues = "https://github.com/rapidrabbitsoft/faviconx/issues"
-Changelog = "https://github.com/rapidrabbitsoft/faviconx/releases"
-
-[project.optional-dependencies]
-dev = [
-    "pytest>=6.0.0",
-    "pytest-cov>=2.0.0",
-    "black>=22.0.0",
-    "flake8>=4.0.0",
-    "mypy>=0.950",
-]
-
-[tool.setuptools.packages.find]
-include = ["faviconx*"]
-
-[tool.setuptools.package-data]
-faviconx = ["*.txt", "*.md"]
-
 [tool.black]
 line-length = 88
 target-version = ['py39']
