@@ -165,7 +165,7 @@ The generated `index.html` includes comprehensive meta tags for:
 
 ## Requirements
 
-- Python 3.7+
+- Python 3.9+
 - Pillow (PIL)
 - Click
 - CairoSVG
