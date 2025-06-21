@@ -12,29 +12,28 @@ jobs:
     strategy:
       matrix:
         python-version: [3.9, "3.10", "3.11", "3.12", "3.13"]
-
     steps:
     - uses: actions/checkout@v4
-    
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v4
       with:
         python-version: ${{ matrix.python-version }}
-    
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-        pip install pytest pytest-cov click
+        pip install pytest pytest-cov coverage click
         pip install -e .
-    
+    - name: Run tests with coverage
+      run: |
+        python -m pytest tests/ -v --cov=faviconx --cov-report=xml --cov-report=term
+    - name: List files in directory
+      run: |
+        ls -la
+        ls -la *.xml || echo "No XML files found"
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
       with:
         file: ./coverage.xml
         fail_ci_if_error: true
-        token: ${{ secrets.CODECOV_TOKEN }} 
-
-    - name: Run tests
-      run: |
-        pytest tests/ -v --cov=faviconx --cov-report=xml
+        token: ${{ secrets.CODECOV_TOKEN }}
