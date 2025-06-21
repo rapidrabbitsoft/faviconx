@@ -68,7 +68,7 @@ def test_cli_error_on_missing_image(temp_output_dir):
     runner = CliRunner()
     result = runner.invoke(main, ["notfound.png", str(temp_output_dir)])
     assert result.exit_code != 0
-    assert "Source image not found" in result.output
+    assert "does not exist" in result.output
 
 def test_cli_no_html_option(sample_image, temp_output_dir):
     runner = CliRunner()
