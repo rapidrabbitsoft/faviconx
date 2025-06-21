@@ -58,10 +58,6 @@ dev = [
     "mypy>=0.950",
 ]
 
-[project.readme]
-file = "README.md"
-content-type = "text/markdown"
-
 [tool.setuptools.packages.find]
 include = ["faviconx*"]
 
